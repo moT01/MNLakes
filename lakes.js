@@ -1,45 +1,51 @@
-var width = window.innerWidth-10, height = window.innerHeight-10;
+var lakeMarkers, hasLayer = false, width = window.innerWidth-10, height = window.innerHeight-10;
 document.getElementById('map').style.width = width + 'px';
 document.getElementById('map').style.height = height + 'px';
-document.getElementById('menu').style.left = width - 110 + 'px';
+document.getElementById('menu').style.left = width - 150 + 'px';
 
-var map = L.map('map').setView([46.3924658,-93.5], 7);
+var land = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', { id: 'mapbox.streets' });
+var lakeFeatures = L.tileLayer('https://maps1.dnr.state.mn.us/mapcache/gmaps/lakefinder@mn_google/{z}/{x}/{y}.png');
 
-var land = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-		maxZoom: 18,
-        minZoom: 6,
-		id: 'mapbox.streets'
-	});
-map.addLayer(land);
+var map = L.map('map', {
+    center: [46.3924658,-93.5],
+    zoom: 6,
+    maxZoom: 16,
+    minZoom: 4,
+    layers: [land, lakeFeatures],
+    maxBounds:([
+        [20, -135],
+        [60, -55]
+    ])
+});
 
-L.tileLayer('http://maps1.dnr.state.mn.us/mapcache/gmaps/lakefinder@mn_google/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        minZoom: 6,
-	}).addTo(map);
-
-fetch('testing2.json')
+var clusters = L.markerClusterGroup({
+    showCoverageOnHover: false
+}); //end L.markerClusterGroup
+map.addLayer(clusters);
+        
+fetch('allLakes.json')
     .then((resp) => resp.json())
-    .then((data) => {    
-        console.log(data);
-    
-    var lakes = L.geoJson(data,{
-        pointToLayer: function(feature,LatLng){
-            var marker = L.marker(LatLng);
-            marker.bindTooltip('Lake Name');
-            marker.bindPopup('Lake Stats');
-            return marker;
+    .then((json) => {
+ 
+    changeLayer = function(species) {
+        if(hasLayer) {
+            clusters.removeLayer(lakeMarkers);
         }
-    });
-    var clusters = L.markerClusterGroup({
-        showCoverageOnHover: false
-    });
-        clusters.addLayer(lakes);
-        map.addLayer(clusters);
-  //  map.setMaxBounds([
-    //    [46.3924658, -93.5],
-      //  [46.3924658, -93.5]
-    //]);
-
+        lakeMarkers = L.geoJson(json,{
+            pointToLayer: function(feature,LatLng){
+                var marker = L.marker(LatLng);
+                marker.bindTooltip(feature.properties.name);
+                for(var i=0; i<feature.properties.fishSpecies.length; i++) {
+                    if(feature.properties.fishSpecies[i] == species) {
+                        return marker;
+                    }
+                } //end for (i)
+            }//end pointToLayer()
+        }); //end L.geoJson
+        clusters.addLayer(lakeMarkers);
+        hasLayer = true;
+    } //end changeLayer()
+                
 }).catch(function(error) {
     console.log('error');
 }); //end fetch

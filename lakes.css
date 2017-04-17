@@ -10,21 +10,22 @@ body {
     height: 100vh; }
 
 #menu {
+    position: fixed;
+    top: 15px; 
+    z-index: 10000; } /*
     padding: 5px;
     text-align: right;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
-	background: rgba(255,255,255,0.8);
 	border-radius: 5px; 
-    position: fixed;
-    top: 15px;
-    z-index: 10000;
-    font: bold 18px 'Lucida Console', Monaco, monospace;
 	text-indent: 1px;
-    font-size: 11px;
-}
+    font-size: 11px; }
 
 .menu-row {
-    display: block;
+    display: block; }*/
+
+#drop-box {
+    padding: 2px 2px 0 2px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4); 
+    font: 10px 'Lucida Console', Monaco, monospace;
 }
 
 .marker-cluster {
@@ -42,6 +43,5 @@ body {
     height: 25px;
     max-height: 25px;
     box-shadow: 0 1px 5px rgba(0,0,0,0.4);
-	background: rgba(255,255,255,0.8);
-    font: bold 12px 'Lucida Console', Monaco, monospace;
-}
+	background-color: rgba(255,255,255,0.8);
+    font: bold 10px 'Lucida Console', Monaco, monospace; }

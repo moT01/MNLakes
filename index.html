@@ -12,14 +12,23 @@
     <body>
         <div id='map'></div>
         <div id='menu'>
-            <div class="menu-row">Muskie<input type="checkbox"></div>
-            <div class="menu-row">Smallmouth<input type="checkbox"></div>
-            <div class="menu-row">Channels<input type="checkbox"></div>
-            <div class="menu-row">Flatheads<input type="checkbox"></div>
-            <div class="menu-row">Sturgeon<input type="checkbox"></div>
-            <div class="menu-row">Whitefish<input type="checkbox"></div>
-            <div class="menu-row">Trout<input type="checkbox"></div>
-            <div class="menu-row">Carp/Sucker<input type="checkbox"></div>
+             <select id='drop-box'>
+                <option></option>
+                <option onClick="changeLayer('muskellunge');">Muskellunge</option>
+                <option onClick="changeLayer('tiger muskellunge');">Tiger Muskellunge</option>
+                <option onClick="changeLayer('smallmouth bass');">Smallmouth Bass</option>
+                <option onClick="changeLayer('walleye');">Walleye</option>
+                <option onClick="changeLayer('channel catfish');">Channel Catfish</option>
+                <option onClick="changeLayer('flathead catfish');">Flathead Catfish</option>
+                <option onClick="changeLayer('northern pike');">Northern Pike</option>
+                <option onClick="changeLayer('largemouth bass');">Largemouth Bass</option>
+                <option onClick="changeLayer('black crappie');">Black Crappie</option>
+                <option onClick="changeLayer('lake sturgeon');">Lake Sturgeon</option>
+                <option onClick="changeLayer('yellow perch');">Yellow Perch</option>
+                <option onClick="changeLayer('lake whitefish');">Lake Whitefish</option>
+            </select> 
+            <!--div class="menu-row">Add<input type="checkbox" onClick="add();"></div>
+            <div class="menu-row">Remove<input type="checkbox" onClick="remove();"></div-->
         </div>
         <script type="text/javascript" src="leaflet-v1.0.3.js"></script>
         <script type="text/javascript" src="markerCluster.js"></script>
