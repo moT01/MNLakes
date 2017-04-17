@@ -11,10 +11,10 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 		id: 'mapbox.streets'
 	}).addTo(map);
 
-L.tileLayer('http://maps1.dnr.state.mn.us/mapcache/gmaps/lakefinder@mn_google/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        minZoom: 6,
-	}).addTo(map);
+//L.tileLayer('http://maps1.dnr.state.mn.us/mapcache/gmaps/lakefinder@mn_google/{z}/{x}/{y}.png', {
+  //      maxZoom: 18,
+    //    minZoom: 6,
+	//}).addTo(map);
 
 fetch('testing2.json')
     .then((resp) => resp.json())
