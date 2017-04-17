@@ -34,10 +34,10 @@ fetch('testing2.json')
     });
         clusters.addLayer(lakes);
         map.addLayer(clusters);
-    map.setMaxBounds([
-        [46.3924658, -93.5],
-        [46.3924658, -93.5]
-    ]);
+    //map.setMaxBounds([
+      //  [46.3924658, -93.5],
+        //[46.3924658, -93.5]
+    //]);
 
 }).catch(function(error) {
     console.log('error');
