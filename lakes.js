@@ -5,7 +5,7 @@ document.getElementById('menu').style.left = width - 110 + 'px';
 
 var map = L.map('map').setView([46.3924658,-93.5], 7);
 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibW90MDEiLCJhIjoiY2oxbTNqOW5oMDAzYzMza2F2OHNzMjAwaSJ9.pcm8hicrI-lmZ91OcRgiUA', {
 		maxZoom: 18,
         minZoom: 6,
 		id: 'mapbox.streets'
