@@ -5,16 +5,17 @@ document.getElementById('menu').style.left = width - 110 + 'px';
 
 var map = L.map('map').setView([46.3924658,-93.5], 7);
 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibW90MDEiLCJhIjoiY2oxbTNqOW5oMDAzYzMza2F2OHNzMjAwaSJ9.pcm8hicrI-lmZ91OcRgiUA', {
+var land = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
         minZoom: 6,
 		id: 'mapbox.streets'
-	}).addTo(map);
+	});
+map.addLayer(land);
 
-//L.tileLayer('http://maps1.dnr.state.mn.us/mapcache/gmaps/lakefinder@mn_google/{z}/{x}/{y}.png', {
-  //      maxZoom: 18,
-    //    minZoom: 6,
-	//}).addTo(map);
+L.tileLayer('http://maps1.dnr.state.mn.us/mapcache/gmaps/lakefinder@mn_google/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        minZoom: 6,
+	}).addTo(map);
 
 fetch('testing2.json')
     .then((resp) => resp.json())
@@ -34,9 +35,9 @@ fetch('testing2.json')
     });
         clusters.addLayer(lakes);
         map.addLayer(clusters);
-    //map.setMaxBounds([
-      //  [46.3924658, -93.5],
-        //[46.3924658, -93.5]
+  //  map.setMaxBounds([
+    //    [46.3924658, -93.5],
+      //  [46.3924658, -93.5]
     //]);
 
 }).catch(function(error) {
