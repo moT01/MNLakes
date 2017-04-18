@@ -3,8 +3,8 @@ document.getElementById('map').style.width = width + 'px';
 document.getElementById('map').style.height = height + 'px';
 document.getElementById('menu').style.left = width - 150 + 'px';
 
-var land = L.tileLayer('https://api.tiles.mapbox.com/v4/id=mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', { id: 'mapbox.streets' });
-//var lakeFeatures = L.tileLayer('https://maps1.dnr.state.mn.us/mapcache/gmaps/lakefinder@mn_google/{z}/{x}/{y}.png');
+var land = L.tileLayer('https://api.tiles.mapbox.com/v4/id=mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw');//, { id: 'mapbox.streets' });
+var lakeFeatures = L.tileLayer('https://maps1.dnr.state.mn.us/mapcache/gmaps/lakefinder@mn_google/{z}/{x}/{y}.png');
 
 var map = L.map('map', {
     center: [46.3924658,-93.5],
