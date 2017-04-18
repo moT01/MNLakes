@@ -12,20 +12,20 @@
     <body>
         <div id='map'></div>
         <div id='menu'>
-             <select id='drop-box'>
-                <option></option>
-                <option onClick="changeLayer('muskellunge');">Muskellunge</option>
-                <option onClick="changeLayer('tiger muskellunge');">Tiger Muskellunge</option>
-                <option onClick="changeLayer('smallmouth bass');">Smallmouth Bass</option>
-                <option onClick="changeLayer('walleye');">Walleye</option>
-                <option onClick="changeLayer('channel catfish');">Channel Catfish</option>
-                <option onClick="changeLayer('flathead catfish');">Flathead Catfish</option>
-                <option onClick="changeLayer('northern pike');">Northern Pike</option>
-                <option onClick="changeLayer('largemouth bass');">Largemouth Bass</option>
-                <option onClick="changeLayer('black crappie');">Black Crappie</option>
-                <option onClick="changeLayer('lake sturgeon');">Lake Sturgeon</option>
-                <option onClick="changeLayer('yellow perch');">Yellow Perch</option>
-                <option onClick="changeLayer('lake whitefish');">Lake Whitefish</option>
+             <select id='drop-box' onchange="changeLayer(this.value)">
+                <option selected disabled>Target Species</option>
+                <option value="muskellunge">Muskellunge</option>
+                <option value="tiger muskellunge">Tiger Muskellunge</option>
+                <option value="smallmouth bass">Smallmouth Bass</option>
+                <option value="walleye">Walleye</option>
+                <option value="channel catfish">Channel Catfish</option>
+                <option value="flathead catfish">Flathead Catfish</option>
+                <option value="northern pike">Northern Pike</option>
+                <option value="largemouth bass">Largemouth Bass</option>
+                <option value="black crappie">Black Crappie</option>
+                <option value="lake sturgeon">Lake Sturgeon</option>
+                <option value="yellow perch">Yellow Perch</option>
+                <option value="lake whitefish">Lake Whitefish</option>
             </select> 
             <!--div class="menu-row">Add<input type="checkbox" onClick="add();"></div>
             <div class="menu-row">Remove<input type="checkbox" onClick="remove();"></div-->

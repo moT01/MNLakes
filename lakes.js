@@ -1,4 +1,4 @@
-var lakeMarkers, hasLayer = false, width = window.innerWidth-10, height = window.innerHeight-10;
+var changeLayer, lakeMarkers, hasLayer = false, width = window.innerWidth-10, height = window.innerHeight-10;
 document.getElementById('map').style.width = width + 'px';
 document.getElementById('map').style.height = height + 'px';
 document.getElementById('menu').style.left = width - 150 + 'px';
@@ -23,7 +23,7 @@ var clusters = L.markerClusterGroup({
 }); //end L.markerClusterGroup
 map.addLayer(clusters);
         
-fetch('allLakes.json')
+fetch('testing.json')
     .then((resp) => resp.json())
     .then((json) => {
  
@@ -44,8 +44,7 @@ fetch('allLakes.json')
         }); //end L.geoJson
         clusters.addLayer(lakeMarkers);
         hasLayer = true;
-    } //end changeLayer()
-                
+    } //end changeLayer()             
 }).catch(function(error) {
     console.log('error');
 }); //end fetch
