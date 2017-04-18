@@ -23,7 +23,7 @@ var clusters = L.markerClusterGroup({
 }); //end L.markerClusterGroup
 map.addLayer(clusters);
         
-fetch('testing.json')
+fetch('allLakes.json')
     .then((resp) => resp.json())
     .then((json) => {
  
