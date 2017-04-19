@@ -99,7 +99,6 @@
 	position: absolute; }
 
 /* control positioning */
-
 .leaflet-control {
 	position: relative;
 	z-index: 800;
