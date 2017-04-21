@@ -415,6 +415,7 @@
 	background-clip: padding-box; }
 
 .leaflet-popup {
+        font: 10px 'Lucida Console', Monaco, monospace;
 	position: absolute;
 	text-align: center;
 	margin-bottom: 20px; }
@@ -425,8 +426,8 @@
 	border-radius: 12px; }
 
 .leaflet-popup-content {
-	margin: 13px 19px;
-	line-height: 1.4; }
+	margin: 10px 10px;
+	line-height: 1.2; }
 
 .leaflet-popup-content p {
 	margin: 18px 0; }

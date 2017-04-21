@@ -35,7 +35,7 @@ fetch('allLakes.json')
             pointToLayer: function(feature,LatLng){
                 var marker = L.marker(LatLng);
                 marker.bindTooltip(feature.properties.name);
-                marker.bindPopup('<div class="hi">hi</div>');
+                marker.bindPopup('<div class="name">'+feature.properties.name+'</div><br>Acres: '+feature.properties.acres+'<br>Littoral Acres: '+feature.properties.littoralAcres+'<br>Average Depth: '+feature.properties.averageDepth+'\'<br>Max Depth: '+feature.properties.maxDepth+'\'<br>Water Clarity: '+feature.properties.waterClarity+'\'<br>Shoreline Miles: '+feature.properties.shorelineMiles+' miles');
                 for(var i=0; i<feature.properties.fishSpecies.length; i++) {
                     if(feature.properties.fishSpecies[i] == species) {
                         return marker;
@@ -45,6 +45,10 @@ fetch('allLakes.json')
                         }
                     } else if (species == "sunfish") {
                         if (feature.properties.fishSpecies[i] == ("hybrid sunfish" || "green sunfish" || "pumpkinseed" || "bluegill")) {
+                            return marker;
+                        }
+                    }else if (species == "crappie") {
+                        if (feature.properties.fishSpecies[i] == ("black crappie" || "white crappie")) {
                             return marker;
                         }
                     } else if (species == "carp") {
