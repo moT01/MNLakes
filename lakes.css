@@ -46,6 +46,21 @@ body {
 	background-color: rgba(255,255,255,0.8);
     font: bold 10px 'Lucida Console', Monaco, monospace; }
 
-.name {
-    text-align: center;
+
+.center {
+    text-align: center; }
+.bold {
     font-weight: bold; }
+.graph {
+    width: 200px;
+    max-width: 200px;
+    height: 120px; 
+    max-height: 120px; }
+.average {
+    color: #ccc; }
+.quantity {
+    display: inline;
+    color: #00F; } 
+.quality {
+    display: inline;
+    color: green; }
