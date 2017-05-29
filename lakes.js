@@ -24,7 +24,7 @@ var clusters = L.markerClusterGroup({
 }); //end L.markerClusterGroup
 map.addLayer(clusters);
         
-fetch('surveyTest.json')
+fetch('https://firebasestorage.googleapis.com/v0/b/lakes-f76ce.appspot.com/o/surveyTest_xaa.geojson?alt=media&token=7ee7db7c-212c-4b45-9fd4-022209c980c9')
     .then((resp) => resp.json())
     .then((json) => {
     
