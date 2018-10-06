@@ -3,8 +3,9 @@
 
 ###### This is the first rendition of my MN lake finder
 ##### Technologies Used
-- Firebase
+- HTML
+- CSS
+- Javascript
 - Leaflet
-- [MN DNR](https://www.dnr.state.mn.us/) API
 
 ###### Check out the upgraded version [here](https://github.com/moT01/fishFinder)
