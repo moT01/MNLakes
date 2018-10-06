@@ -7,5 +7,6 @@
 - CSS
 - Javascript
 - Leaflet
+- PHP
 
 ###### Check out the upgraded version [here](https://github.com/moT01/fishFinder)
